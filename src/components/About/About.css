@@ -1,0 +1,28 @@
+.section-about{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+
+}
+.titulo-about{
+    margin-top: 0;
+    /* border: 1px solid red; */
+    /* color: #4b4850; */
+}
+.about-container{
+    display: flex;
+    flex-direction: row;
+}
+.text-about{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3em;
+    text-align: justify;
+    /* color: #4b4850; */
+    /* border: 1px solid rgb(255, 72, 0); */
+}
+a{
+    color: #4b4850;
+}
