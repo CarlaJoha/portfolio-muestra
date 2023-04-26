@@ -7,3 +7,7 @@
 .logo{
   width: 40%;
 }
+.App{
+  background-image: url("./assets/images/imgFondo3.png");
+  background-size: cover;
+}

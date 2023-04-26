@@ -12,17 +12,14 @@ const NavBar = () => {
       </div>
       <ul className="links-container">
         <li>
-        <a href="#layout">Inicio</a>
-        </li>
-        <li>
          <a href="#projects">Proyectos</a>
         </li>
         <li>
          <a href="#about">About</a>
         </li>
-        <li>
+        {/* <li>
          <a href="#experience">Experiencia</a>
-        </li>
+        </li> */}
         <li>
         <a href="#contactme">Contacto</a>
         </li>

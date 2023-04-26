@@ -9,7 +9,11 @@ const Projects = () => {
     <section className="section-projects" id="projects" >
       <div className="title-projects">
         <h2>PROYECTOS</h2>
-        <a href="#layout" className="link-inicio">{"<<"} Inicio {">>"}</a>
+        <div>
+      <a className="volverInicio" href="#layout">
+        {"<<"} Inicio {">>"}
+      </a>
+      </div>
       </div>
       <div className="container-projects">
       {projects.map((project, index) => {
@@ -25,7 +29,11 @@ const Projects = () => {
         );
       })}
       </div>
-      <a href="#layout">{"<<"} Inicio {">>"}</a>
+      <div>
+      <a className="volverInicio" href="#layout">
+        {"<<"} Inicio {">>"}
+      </a>
+      </div>
     </section>
   );
 };

@@ -16,9 +16,11 @@ function App() {
   return (
     <>
       <Layout />
+    <div className="App">
       <Aboutme />
       <Projects />
       <Contactme />
+    </div>
     </>
   );
 }
