@@ -1,7 +1,8 @@
 import img  from './assets/iconImagen.png'
-import imgFormulario1 from "./assets/proyectosImg/FormularioCitas1.png"
+import imgFormulario1 from "./assets/proyectosImg/FormularioCitas2.png"
 import imgCalculadora from "./assets/proyectosImg/calculadora.png"
 import imgTestimonios from "./assets/proyectosImg/Testimonios.png"
+import imgContador from "./assets/proyectosImg/contador.png"
 export const projects = [
   {
     id:1,
@@ -37,6 +38,15 @@ export const projects = [
     tecnologies: "Javascript, React, HTML, CSS",
     image: imgTestimonios,
     link: "https://carlajoha-testimonios-react.netlify.app",
+    date: 2023,
+  },
+  {
+    id:5,
+    name: "Contador",
+    description: "Proyecto contador que aumenta y disminuye",
+    tecnologies: "Javascript, React, HTML, CSS",
+    image: imgContador,
+    link: "https://carlajoha-contador.netlify.app",
     date: 2023,
   },
 ];
