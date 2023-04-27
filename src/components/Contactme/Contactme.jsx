@@ -13,7 +13,7 @@ const Contactme = () => {
 
   return (
     <section className="section-contactme" id="contactme">
-      <h1>Contáctame:</h1>
+    <h1 className="contact-title">Contáctame:</h1>
       <div>
       <a className="volverInicio" href="#layout">
         {"<<"} Inicio {">>"}
@@ -44,6 +44,7 @@ const Contactme = () => {
           href="https://wa.me/584142030597"
           target="_blank"
           rel="noopener noreferrer"
+          alt="GitHub"
         >
          <img className="img-whatsapp" src={imgWhatsapp} alt="whatsapp" /> 
         </a>
@@ -57,14 +58,26 @@ const Contactme = () => {
       <form className="form" name="form" onSubmit={enviarEmail}>
         <div>
           <label className="label" htmlFor="contact-name">
-            Nombre:{" "}
+            Nombre completo:{" "}
           </label><br/>
           <input
             className="input-name"
             type="text"
             id="input-name"
-            placeholder="Nombre para comunicarnos"
+            placeholder="Nombre y Apellido"
             name="contact-name"
+          />
+        </div>
+        <div>
+          <label className="label" htmlFor="contact-name">
+            Tu correo electrónico:{" "}
+          </label><br/>
+          <input
+            className="input-email"
+            type="email"
+            id="input-email"
+            placeholder="your.email@email.com"
+            name="contact-email"
           />
         </div>
         <div>
@@ -78,14 +91,14 @@ const Contactme = () => {
             placeholder="Envíame un mensaje..."
           />
         </div>
-        <buttom
+        <button
           className="btn-form"
           type="submit"
           value="Submit"
           id="input-submit"
         >
           Enviar
-        </buttom>
+        </button>
       </form>
       </div>
     </section>

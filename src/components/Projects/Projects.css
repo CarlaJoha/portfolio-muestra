@@ -2,6 +2,10 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow: auto;
+    scroll-snap-align: start;
+    scroll-behavior: auto;
+    /* border: 1px solid red; */
 }
 .title-projects{
     font-size: 1.5rem;
@@ -17,7 +21,7 @@ a {
     text-decoration-line: none;
 }
 .container-card{
-    border-radius: 10px;
+    border-radius: 4px;
     width: 280px;
     display: flex;
     flex-direction: row;
@@ -26,7 +30,7 @@ a {
     backface-visibility: visible;
     
     overflow: hidden;
-    box-shadow: 1px 1px 10px hsl(264.53,76.08%,40.98%);
+    box-shadow: 1px 1px 10px hsl(265, 26%, 36%);
     /* border: 1px solid red; */
 }
 

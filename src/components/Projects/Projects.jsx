@@ -29,10 +29,13 @@ const Projects = () => {
         );
       })}
       </div>
-      <div>
-      <a className="volverInicio" href="#layout">
-        {"<<"} Inicio {">>"}
-      </a>
+      <div className="anchor-container">
+      <a className="anterior" href="#skills">
+          {"<<"} Anterior {">>"} 
+        </a>
+        <a className="siguiente" href="#contactme">
+          {"<<"} Siguiente {">>"}
+        </a>
       </div>
     </section>
   );

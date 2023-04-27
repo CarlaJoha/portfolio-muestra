@@ -4,12 +4,19 @@
   flex-direction: column;
   justify-content: space-between;
   /* border: 1px solid red; */
+
+  overflow: auto;
+  scroll-snap-align: start;
 }
+/* .contact-title{
+border: 1px solid red;
+
+} */
 .container-contactme {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    height: 60vh;
+    height: 70vh;
     /* border: 1px solid blue; */
 }
 .form {
@@ -62,6 +69,17 @@
   font-family: "Raleway", sans-serif, "Oswald", sans-serif;
   font-size: large;
 }
+.input-email{
+  border: none;
+  width: 25em;
+  min-height: 40px;
+  background-color: hsla(213, 20%, 89%, 0.555);
+  border-radius: 5px;
+  color: black;
+  padding: 0 20px;
+  font-family: "Raleway", sans-serif, "Oswald", sans-serif;
+  font-size: large;
+}
 .input-mensaje {
   border: none;
   width: 25em;
@@ -78,9 +96,10 @@
   font-size: 1.5em;
 }
 .btn-form {
-    width: 30%;
+  width: 100%;
   border: 1px solid white;
-  padding: 10px 30px;
+  padding: .5em 3em;
+  font-size: medium;
   border-radius: 10px;
   background-color: hsl(262, 77%, 63%);
   text-decoration: none;

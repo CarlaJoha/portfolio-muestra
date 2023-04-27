@@ -8,13 +8,19 @@
   background-image: url("./assets/images/imgFondo3.png");
   background-size: cover;
 
+  /* overflow: auto;
+  scroll-snap-type: y proximity; */
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
+html{
+  min-height: 100vh;
+  scroll-snap-type: y mandatory;
+}
 body {
   margin: 0;
   display: flex;

@@ -4,10 +4,15 @@
   padding: 2rem;
   text-align: center;
 }
-.logo{
+.logo {
   width: 40%;
 }
-.App{
+/* .app-container {
+  height: 100vh;
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+} */
+.App {
   background-image: url("./assets/images/imgFondo3.png");
-  background-size: cover;
+  background-size: contain;
 }
