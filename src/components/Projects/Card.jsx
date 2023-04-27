@@ -4,7 +4,7 @@ import "./Projects.css";
 const Card = ({ name, image, tecnologies, date, link }) => {
   return (
     <div className="container-card">
-      <a href={link}>
+      <a href={link} target="_blank" rel="noopener noreferrer">
         <article className="card">
           <img src={image} alt="img" className="image-card" />
           <div className="info-card">
