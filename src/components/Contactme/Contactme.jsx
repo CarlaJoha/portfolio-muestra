@@ -2,104 +2,185 @@ import "./Contactme.css";
 import imgGithub from "../../assets/images/github.png";
 import imgLinkedin from "../../assets/images/linkedin.png";
 import imgWhatsapp from "../../assets/images/whatsapp.png";
-// import emails from "emailjs";
+import React, { useEffect, useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import {SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY} from "../../env"
 
 const Contactme = () => {
-  const enviarEmail = (event) => {
+  const form = useRef();
+
+  const [formulario, setFormulario] = useState({
+    from_name: "",
+    from_email: "",
+    message: "",
+  });
+  
+  // eslint-disable-next-line no-unused-vars
+  const [ enviado, setEnviado ] = useState(false)
+
+  useEffect(()=>{
+    if(enviado === true ){
+      setFormulario({
+        from_name: "",
+        from_email: "",
+        message: "",
+      });
+      setEnviado(false);
+    }
+  }, [enviado])
+
+  const sendEmail = (event) => {
     event.preventDefault();
-    // emails.sendForm
-    console.log("email enviado correctamente");
+
+    emailjs
+      .sendForm(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        form.current,
+        PUBLIC_KEY
+      ) //process.env.SERVICE_ID
+      .then(
+        (result) => {
+          alert("Mensaje enviado, gracias por contactar");
+          console.log(result.text);
+          setEnviado(true);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
+  const [error, setError] = useState(false);
+  
+  const { from_name, from_email, message } = formulario;
+  
+  const handleSendEmail = (event) => {
+    if (from_name.trim() === "" || from_email.trim() === "" || message.trim() === "") {
+      setError(true);
+      return;
+    } 
+    setError(false);
+    sendEmail(event);  
+  };
+  
+
+    const actualizarFormulario = (event) => {
+      setFormulario({
+        ...formulario,
+        [event.target.name]: event.target.value,
+      });
+    };
+  
+  
   return (
     <section className="section-contactme" id="contactme">
-    <h1 className="contact-title">Contáctame:</h1>
+      <h1 className="contact-title">Contáctame:</h1>
       <div>
-      <a className="volverInicio" href="#layout">
-        {"<<"} Inicio {">>"}
-      </a>
+        <a className="volverInicio" href="#layout">
+          {"<<"} Inicio {">>"}
+        </a>
       </div>
       <div className="container-contactme">
-      <div className="container-izq">
-      <div>
-        <a
-          href="https://www.linkedin.com/in/carlajoha/"
-          target="_blank"
-          rel="noopener noreferrer"
+        <div className="container-izq">
+          <div>
+            <a
+              href="https://www.linkedin.com/in/carlajoha/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img className="img-linkedin" src={imgLinkedin} alt="linkedin" />
+            </a>
+          </div>
+          <div>
+            <a
+              href="https://github.com/CarlaJoha"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img className="img-github" src={imgGithub} alt="gitHub" />
+            </a>
+          </div>
+          <div>
+            <a
+              href="https://wa.me/584142030597"
+              target="_blank"
+              rel="noopener noreferrer"
+              alt="GitHub"
+            >
+              <img className="img-whatsapp" src={imgWhatsapp} alt="whatsapp" />
+            </a>
+          </div>
+          <div>
+            <a
+              className="downloadCv"
+              href="/CV CarlaJoha2023.pdf"
+              type="pdf"
+              download
+            >
+              Descargar CV
+            </a>
+          </div>
+        </div>
+        {error ? ( <p className="alerta-error">Por favor, llena todos los campos</p> ) : null}
+        <form
+          className="form"
+          name="form"
+          ref={form}
+          onSubmit={handleSendEmail}
         >
-         <img className="img-linkedin" src={imgLinkedin} alt="linkedin" /> 
-        </a>
-      </div>
-      <div>
-        <a
-          href="https://github.com/CarlaJoha"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-         <img className="img-github" src={imgGithub} alt="gitHub" /> 
-        </a>
-      </div>
-      <div>
-        <a
-          href="https://wa.me/584142030597"
-          target="_blank"
-          rel="noopener noreferrer"
-          alt="GitHub"
-        >
-         <img className="img-whatsapp" src={imgWhatsapp} alt="whatsapp" /> 
-        </a>
-      </div>
-      <div>
-        <a className="downloadCv" href="/CV CarlaJoha2023.pdf" type="pdf" download >
-          Descargar CV
-        </a>
-      </div>
-      </div>
-      <form className="form" name="form" onSubmit={enviarEmail}>
-        <div>
-          <label className="label" htmlFor="contact-name">
-            Nombre completo:{" "}
-          </label><br/>
+          <div>
+            <label className="label" htmlFor="contact-name">
+              Nombre completo:{" "}
+            </label>
+            <br />
+            <input
+              className="input-name"
+              type="text"
+              id="input-name"
+              placeholder="Nombre y Apellido"
+              name="from_name"
+              onChange={actualizarFormulario}
+              value={from_name}
+            />
+          </div>
+          <div>
+            <label className="label" htmlFor="contact-name">
+              Tu correo electrónico:{" "}
+            </label>
+            <br />
+            <input
+              className="input-email"
+              type="email"
+              id="input-email"
+              placeholder="your.email@email.com"
+              name="from_email"
+              onChange={actualizarFormulario}
+              value={from_email}
+            />
+          </div>
+          <div>
+            <label className="label" htmlFor="">
+              Mensaje:{" "}
+            </label>
+            <br />
+            <textarea
+              className="input-mensaje"
+              type="text"
+              id="input-mensaje"
+              placeholder="Envíame un mensaje..."
+              name="message"
+              onChange={actualizarFormulario}
+              value={message}
+            />
+          </div>
           <input
-            className="input-name"
-            type="text"
-            id="input-name"
-            placeholder="Nombre y Apellido"
-            name="contact-name"
+            className="btn-form"
+            type="submit"
+            value="Send"
+            id="input-submit"
           />
-        </div>
-        <div>
-          <label className="label" htmlFor="contact-name">
-            Tu correo electrónico:{" "}
-          </label><br/>
-          <input
-            className="input-email"
-            type="email"
-            id="input-email"
-            placeholder="your.email@email.com"
-            name="contact-email"
-          />
-        </div>
-        <div>
-          <label className="label" htmlFor="">
-            Mensaje:{" "}
-          </label><br/>
-          <textarea
-            className="input-mensaje"
-            type="text"
-            id="input-mensaje"
-            placeholder="Envíame un mensaje..."
-          />
-        </div>
-        <button
-          className="btn-form"
-          type="submit"
-          value="Submit"
-          id="input-submit"
-        >
-          Enviar
-        </button>
-      </form>
+        </form>
       </div>
     </section>
   );
