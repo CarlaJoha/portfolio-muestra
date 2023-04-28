@@ -1,4 +1,3 @@
-import "./App.css";
 import Layout from "./components/Layout/Layout.jsx";
 import Aboutme from "./components/About/About";
 import Projects from "./components/Projects/Projects.jsx";

@@ -1,5 +1,4 @@
 import React from "react";
-import "./Layout.css";
 import NavBar from "../NavBar/NavBar";
 import videoLayout from "../../assets/images/humo.mp4";
 

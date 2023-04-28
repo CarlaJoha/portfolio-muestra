@@ -1,5 +1,4 @@
 import React from "react";
-import "./Projects.css";
 
 const Card = ({ name, image, tecnologies, date, link }) => {
   return (

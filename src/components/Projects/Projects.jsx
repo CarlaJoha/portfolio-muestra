@@ -1,7 +1,6 @@
 import React from "react";
 import Card from "./Card";
 import { projects } from "../../data";
-import "./Projects.css";
 
 const Projects = () => {
   // console.log(projects);

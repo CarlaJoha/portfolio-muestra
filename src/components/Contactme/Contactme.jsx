@@ -1,4 +1,3 @@
-import "./Contactme.css";
 import imgGithub from "../../assets/images/github.png";
 import imgLinkedin from "../../assets/images/linkedin.png";
 import imgWhatsapp from "../../assets/images/whatsapp.png";
@@ -75,8 +74,8 @@ const Contactme = () => {
   
   return (
     <section className="section-contactme" id="contactme">
-      <h1 className="contact-title">Contáctame:</h1>
-      <div>
+      <div className="contact-title">
+      <h1 >Contáctame:</h1>
         <a className="volverInicio" href="#layout">
           {"<<"} Inicio {">>"}
         </a>
@@ -122,6 +121,7 @@ const Contactme = () => {
             </a>
           </div>
         </div>
+        <div className="form-container">
         {error ? ( <p className="alerta-error">Por favor, llena todos los campos</p> ) : null}
         <form
           className="form"
@@ -130,7 +130,7 @@ const Contactme = () => {
           onSubmit={handleSendEmail}
         >
           <div>
-            <label className="label" htmlFor="contact-name">
+            <label className="label-contactme" htmlFor="contact-name">
               Nombre completo:{" "}
             </label>
             <br />
@@ -145,7 +145,7 @@ const Contactme = () => {
             />
           </div>
           <div>
-            <label className="label" htmlFor="contact-name">
+            <label className="label-contactme" htmlFor="contact-email">
               Tu correo electrónico:{" "}
             </label>
             <br />
@@ -160,7 +160,7 @@ const Contactme = () => {
             />
           </div>
           <div>
-            <label className="label" htmlFor="">
+            <label className="label-contactme" htmlFor="contact-message">
               Mensaje:{" "}
             </label>
             <br />
@@ -181,6 +181,7 @@ const Contactme = () => {
             id="input-submit"
           />
         </form>
+        </div>
       </div>
     </section>
   );

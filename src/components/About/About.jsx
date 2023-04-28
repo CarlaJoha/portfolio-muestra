@@ -1,4 +1,3 @@
-import "./About.css";
 import avatar from "../../assets/images/avatar.svg";
 
 const Aboutme = () => {
@@ -41,6 +40,7 @@ const Aboutme = () => {
         </div>
       </div>
       <div className="anchor-container">
+      
       <a className="anterior" href="#layout">
           {"<<"} Anterior {">>"} 
         </a>
@@ -48,15 +48,7 @@ const Aboutme = () => {
           {"<<"} Siguiente {">>"}
         </a>
       </div>
-      <div className="about-iconsRedes">
-        <ul>
-          <li>
-            <a href="https://www.linkedin.com/in/carlajoha/" title="linkedin">
-              <svg></svg>
-            </a>
-          </li>
-        </ul>
-      </div>
+
     </section>
   );
 };
