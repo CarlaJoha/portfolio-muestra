@@ -11,12 +11,11 @@ const Aboutme = () => {
       </div>
       <div className="about-container">
         <div className="container-avatar">
-          <img src={avatar} alt="avatar" />
+          <img className="img-avatar"src={avatar} alt="avatar" />
         </div>
         <div className="text-about">
           <p>
-            Hola, Yo soy Carla Johanna Aular. Me inicio como Full Stack
-            Developer y soy Magister en Psicología de la Educación.{" "}
+            Me inicio como Full Stack Developer y soy Magister en Psicología de la Educación.{" "}
           </p>
           <p>
             Ahora, me formé con todo mi empeño y disciplina en Soy Henry

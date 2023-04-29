@@ -7,11 +7,11 @@ const Projects = () => {
   return (
     <section className="section-projects" id="projects" >
       <div className="title-projects">
-        <h2>PROYECTOS</h2>
-        <div>
+        <h1>Proyectos</h1>
       <a className="volverInicio" href="#layout">
         {"<<"} Inicio {">>"}
       </a>
+        <div>
       </div>
       </div>
       <div className="container-projects">
