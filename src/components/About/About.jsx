@@ -13,7 +13,7 @@ const Aboutme = () => {
         <div className="container-avatar">
           <img className="img-avatar"src={avatar} alt="avatar" />
         </div>
-        <div className="text-about">
+        <span className="text-about">
           <p>
             Me inicio como Full Stack Developer y soy Magister en Psicología de la Educación.{" "}
           </p>
@@ -36,7 +36,7 @@ const Aboutme = () => {
             me ayudó a desarrollar habilidades para: trabajar en equipos, para
             la creación y construcción de material y ambientes formativos.
           </p>
-        </div>
+        </span>
       </div>
       <div className="anchor-container">
       

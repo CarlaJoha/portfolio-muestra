@@ -3,18 +3,29 @@ import imgFormulario1 from "./assets/proyectosImg/FormularioCitas2.png"
 import imgCalculadora from "./assets/proyectosImg/calculadora.png"
 import imgTestimonios from "./assets/proyectosImg/Testimonios.png"
 import imgContador from "./assets/proyectosImg/contador.png"
+import imgRecipesFood from "./assets/proyectosImg/FoodApp2.png"
+import imgUpload from "./assets/proyectosImg/uploadImages2.png"
 export const projects = [
   {
-    id:1,
-    name: "Rick and Morty",
-    description: "Proyecto 1",
-    tecnologies: "Javascript, React, Redux, HTML, CSS",
-    image: img,
-    link: "Link del dominio",
+    id:6,
+    name: "Galería y carga de imágenes",
+    description: "Single Page Application utlizando las tecnologías: React**, **Node**, **Express* y **Sequelize**.",
+    tecnologies: "Javascript, Nextjs React, HTML, CSS",
+    image: imgUpload,
+    link: "https://upload-images-cj.netlify.app/",
     date: 2023,
   },
   {
-    id:2,
+    id:5,
+    name: "Recipes Food App",
+    description: "Single Page Application que permite obtener información de distintas recetas obtenidas de una api, crear recetas nuevas y guardarlas en una base de datos; fitrarlas por tipo de dieta, orden alfabético o el puntaje de salud y según si viene de la api y de la base de datos.",
+    tecnologies: "Javascript, React, Redux, HTML, CSS",
+    image: imgRecipesFood,
+    link: "https://youtu.be/mXZGOiISmHI",
+    date: 2023,
+  },
+  {
+    id:4,
     name: "Formulario para citas",
     description: "Formulario realizado con React-Vite, con diferentes campos controlados a llenar, muestra del uso de localStorage para almacenar las citas creadas con la posibilidad de eliminarlas",
     tecnologies: "Javascript, React, HTML, CSS",
@@ -32,7 +43,7 @@ export const projects = [
     date: 2023,
   },
   {
-    id:4,
+    id:2,
     name: "Sección de Testimonio",
     description: "Muestra de sección de testimonios responsive",
     tecnologies: "Javascript, React, HTML, CSS",
@@ -41,7 +52,7 @@ export const projects = [
     date: 2023,
   },
   {
-    id:5,
+    id:1,
     name: "Contador",
     description: "Proyecto contador que aumenta y disminuye",
     tecnologies: "Javascript, React, HTML, CSS",
