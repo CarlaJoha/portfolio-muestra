@@ -2,75 +2,10 @@ import imgGithub from "../../assets/images/github.png";
 import imgLinkedin from "../../assets/images/linkedin.png";
 import imgWhatsapp from "../../assets/images/whatsapp.png";
 import React, { useEffect, useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
 import {SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY} from "../../env"
 
 const Contactme = () => {
-  const form = useRef();
 
-  const [formulario, setFormulario] = useState({
-    from_name: "",
-    from_email: "",
-    message: "",
-  });
-  
-  // eslint-disable-next-line no-unused-vars
-  const [ enviado, setEnviado ] = useState(false)
-
-  useEffect(()=>{
-    if(enviado === true ){
-      setFormulario({
-        from_name: "",
-        from_email: "",
-        message: "",
-      });
-      setEnviado(false);
-    }
-  }, [enviado])
-
-  const sendEmail = (event) => {
-    event.preventDefault();
-
-    emailjs
-      .sendForm(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        form.current,
-        PUBLIC_KEY
-      ) //process.env.SERVICE_ID
-      .then(
-        (result) => {
-          alert("Mensaje enviado, gracias por contactar");
-          console.log(result.text);
-          setEnviado(true);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  };
-
-  const [error, setError] = useState(false);
-  
-  const { from_name, from_email, message } = formulario;
-  
-  const handleSendEmail = (event) => {
-    if (from_name.trim() === "" || from_email.trim() === "" || message.trim() === "") {
-      setError(true);
-      return;
-    } 
-    setError(false);
-    sendEmail(event);  
-  };
-  
-
-    const actualizarFormulario = (event) => {
-      setFormulario({
-        ...formulario,
-        [event.target.name]: event.target.value,
-      });
-    };
-  
   
   return (
     <section className="section-contactme" id="contactme">
@@ -102,7 +37,7 @@ const Contactme = () => {
           </div>
           <div>
             <a
-              href="https://wa.me/584142030597"
+              href="https://wa.me/xxxxxxxxxx"
               target="_blank"
               rel="noopener noreferrer"
               alt="GitHub"
@@ -113,7 +48,7 @@ const Contactme = () => {
           <div>
             <a
               className="downloadCv"
-              href="/CV CarlaJoha2023.pdf"
+              href="/xxxxxxxxxxx"
               type="pdf"
               download
             >
